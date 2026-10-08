@@ -29,14 +29,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * Base Layer: BEPO
      *
      * ,-------------------------------------------.                              ,-------------------------------------------.
-     * |RAIS/ESC|   Q  |   W  |   E  |   R  |   T  |                              |   Y  |   U  |   I  |   O  |   P  |  | \   |
+     * |RAIS/ESC|   B  |  EACU|   P  |   O  |   '  |                              |   ^  |   V  |   D  |   L  |   J  |  | \   |
      * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-     * |Ctrl/BS |   A  |   S  |  D   |   F  |   G  |                              |   H  |   J  |   K  |   L  | ;  : |  ' "   |
+     * |Ctrl/BS |   A  |   U  |   I  |   E  |   ,  |                              |   C  |   T  |   S  |   R  |   N  |  ' "   |
      * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
-     * | LShift |   Z  |   X  |   C  |   V  |   B  |LShift|LShift|  |LShift|LShift|   N  |   M  | ,  < | . >  | /  ? |  - _   |
+     * | LShift |   à  |   Y  |   X  |   .  |   K  |LShift|LShift|  |LShift|LShift|   M  |   Q  |   G  |   H  |   -  |        |
      * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-     *                        | GUI  | Del  | Enter| Space| Esc  |  | Enter| Space| Tab  | Bksp | AltGr|
-     *                        |      |      | Alt  | Lower| Raise|  | Lower| Raise|      |      |      |
+     *                        | GUI  | Del  |A+Enter|L+Space| GUI  |  |L+Enter|R+Space| Tab  | Bksp | AltGr|
+     *                        |      |      |      | Lower |      |  | Lower | Raise |      |      |      |
      *                        `----------------------------------'  `----------------------------------'
      */
     [_BEPO] = LAYOUT(
