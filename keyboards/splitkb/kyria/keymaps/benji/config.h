@@ -18,10 +18,11 @@
 
 #ifdef OLED_DRIVER_ENABLE
   #define OLED_DISPLAY_128X64
-  #define OLED_FONT_H "keyboards/kyria/keymaps/benji/glcdfont.c"
+  #define OLED_FONT_H "keyboards/splitkb/kyria/keymaps/benji/glcdfont.c"
 #endif
 
 #ifdef RGBLIGHT_ENABLE
+  #undef RGBLIGHT_LIMIT_VAL
   #define RGBLIGHT_ANIMATIONS
   #define RGBLIGHT_HUE_STEP 8
   #define RGBLIGHT_SAT_STEP 8

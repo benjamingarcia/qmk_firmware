@@ -80,8 +80,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_RAISE] = LAYOUT(
             _______, KC_1, 	  KC_2,    KC_3,    KC_4,    KC_5,                                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
             _______, _______, KC_MPRV, KC_MPLY, KC_MNXT, KC_VOLU,                                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______,
-            _______, _______, _______, _______, KC_MUTE, KC_VOLD, _______, _______, _______, _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, _______, _______,
-            _______, KC_BTN1, KC_BTN2, KC_BTN3, _______, KC_BTN4, KC_BTN5, _______, _______, _______
+            _______, _______, _______, _______, KC_MUTE, KC_VOLD, _______, _______, _______, _______, MS_LEFT, MS_DOWN, MS_UP, MS_RGHT, _______, _______,
+            _______, MS_BTN1, MS_BTN2, MS_BTN3, _______, MS_BTN4, MS_BTN5, _______, _______, _______
             ),
     /*
      * Adjust Layer: Function keys, RGB
@@ -99,8 +99,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_ADJUST] = LAYOUT(
             _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                                       KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
-            _______, RGB_TOG, RGB_SAI, RGB_HUI, RGB_VAI, RGB_MOD,                                     _______, _______, _______, KC_F11,  KC_F12,  _______,
-            _______, _______, RGB_SAD, RGB_HUD, RGB_VAD, RGB_RMOD,_______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+            _______, UG_TOGG, UG_SATU, UG_HUEU, UG_VALU, UG_NEXT,                                     _______, _______, _______, KC_F11,  KC_F12,  _______,
+            _______, _______, UG_SATD, UG_HUED, UG_VALD, UG_PREV,_______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
             _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
             ),
     // /*
@@ -210,7 +210,7 @@ void oled_task_user(void) {
 #endif
 
 #ifdef ENCODER_ENABLE
-void encoder_update_user(uint8_t index, bool clockwise) {
+bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
         switch (get_highest_layer(layer_state)) {
             case _RAISE:
@@ -241,6 +241,8 @@ void encoder_update_user(uint8_t index, bool clockwise) {
                 break;
 
         }
+        return false;
     }
+    return true;
 }
 #endif
