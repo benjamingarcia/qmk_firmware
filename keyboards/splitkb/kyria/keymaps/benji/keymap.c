@@ -172,25 +172,25 @@ static void render_status(void) {
     // QMK Logo and version information
     //render_kyria_logo();
     render_qmk_logo();
-    oled_write_P(PSTR("Kyria rev B3nJ.P0tt3r\n\n"), false);
+    oled_write_P(PSTR("Kyria rev LaBintje\n\n"), false);
 
     // Host Keyboard Layer Status
     oled_write_P(PSTR("Layer: "), false);
     switch (get_highest_layer(layer_state)) {
         case _QWERTY:
-            oled_write_P(PSTR("Chandra\n"), false);
+            oled_write_P(PSTR("Lune\n"), false);
             break;
         case _LOWER:
-            oled_write_P(PSTR("Jace\n"), false);
+            oled_write_P(PSTR("Sciel\n"), false);
             break;
         case _RAISE:
-            oled_write_P(PSTR("Karn\n"), false);
+            oled_write_P(PSTR("Maelle\n"), false);
             break;
         case _ADJUST:
-            oled_write_P(PSTR("Teferi\n"), false);
+            oled_write_P(PSTR("Gustave\n"), false);
             break;
         default:
-            oled_write_P(PSTR("Ashiok\n"), false);
+            oled_write_P(PSTR("Verso\n"), false);
     }
 
     // Host Keyboard LED Status
